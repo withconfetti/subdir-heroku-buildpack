@@ -20,6 +20,8 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		cp -R $BUILD_DIR/$PROJECT_PATH/. $TMP_DIR/
 		echo "       moving common dir to $TMP_DIR"
 		cp -R $BUILD_DIR/common $TMP_DIR/
+		echo "       building common"
+		npm install --prefix common
 	 	echo "       cleaning build dir $BUILD_DIR"
 		rm -rf $BUILD_DIR/*
 		echo "       copying preserved work dir from cache $TMP_DIR to build dir $BUILD_DIR"
