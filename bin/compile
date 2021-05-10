@@ -16,10 +16,11 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		mkdir -p $CACHE_DIR
 		TMP_DIR=`mktemp -d $CACHE_DIR/subdirXXXXX`
 		echo "       created tmp dir: $TMP_DIR"
+		echo "       deleting common symlink"
+		rm $BUILD_DIR/$PROJECT_PATH/common
 		echo "       moving working dir: $PROJECT_PATH to $TMP_DIR"
 		cp -R $BUILD_DIR/$PROJECT_PATH/. $TMP_DIR/
 		echo "       moving common dir to $TMP_DIR"
-		rm $BUILD_DIR/$PROJECT_PATH/common324
 		ls $BUILD_DIR/common
 		cp -R $BUILD_DIR/common $TMP_DIR/
 		ls $TMP_DIR
