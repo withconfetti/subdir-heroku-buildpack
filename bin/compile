@@ -21,7 +21,6 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		echo "       moving working dir's content: $PROJECT_PATH to $TMP_DIR"
 		cp -R $BUILD_DIR/$PROJECT_PATH/. $TMP_DIR/
 		echo "       moving common dir to $TMP_DIR"
-		ls $BUILD_DIR/common
 		cp -R $BUILD_DIR/common $TMP_DIR/
 	 	echo "       cleaning build dir $BUILD_DIR"
 		rm -rf $BUILD_DIR/*
@@ -29,7 +28,6 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		cp -R $TMP_DIR/. $BUILD_DIR/
 		echo "       cleaning tmp dir $TMP_DIR"
 		rm -rf $TMP_DIR
-		ls $BUILD_DIR/common/lib
 		exit 0
 	fi
 fi
