@@ -29,7 +29,7 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		cp -R $TMP_DIR/. $BUILD_DIR/
 		echo "       cleaning tmp dir $TMP_DIR"
 		rm -rf $TMP_DIR
-		ls $BUILD_DIR/common
+		ls $BUILD_DIR/common/lib
 		exit 0
 	fi
 fi
